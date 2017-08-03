@@ -1,17 +1,24 @@
-int led_pin = 13;
-int sensor_val;
+int pin13 = 13;
+int pin12 = 12;
+int pin11 = 11;
+int pin10 = 10;
 
 void setup(){
-  pinMode(led_pin, OUTPUT);
-  Serial.begin(9600);
+  pinMode(pin13, OUTPUT);
+  pinMode(pin12, OUTPUT);
+  pinMode(pin11, OUTPUT);
+  pinMode(pin10, OUTPUT);
 }
 
 void loop(){
-  sensor_val = analogRead(0); //analogRead(A0);
-  Serial.println(sensor_val);
-  if(sensor_val > 0){
-    digitalWrite(led_pin,HIGH);
-  }else{
-    digitalWrite(led_pin,LOW);
-  }
+  digitalWrite(pin13,HIGH);
+  digitalWrite(pin12,LOW);
+  digitalWrite(pin11,HIGH);
+  digitalWrite(pin10,LOW);
+  delay(2000);
+  digitalWrite(pin13,LOW);
+  digitalWrite(pin12,HIGH);
+  digitalWrite(pin11,LOW);
+  digitalWrite(pin10,HIGH);
+  delay(2000);
 }
