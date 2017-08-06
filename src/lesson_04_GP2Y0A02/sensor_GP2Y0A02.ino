@@ -4,9 +4,9 @@ void setup() {
 
 void loop() {
   int value ;
-
-  value = analogRead(0)  ;
-  Serial.println(cal_dist(value));
+  value = analogRead(0);
+  vol = value * 5 / 1024;
+  Serial.println(vol);
   delay(500) ;
 }
 

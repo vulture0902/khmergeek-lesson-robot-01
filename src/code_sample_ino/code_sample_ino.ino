@@ -8,6 +8,7 @@ void setup(){
   pinMode(pin12, OUTPUT);
   pinMode(pin11, OUTPUT);
   pinMode(pin10, OUTPUT);
+  Serial.begin(9600);
 }
 
 void go(){
@@ -20,12 +21,21 @@ void go(){
 void back(){
   digitalWrite(pin13,LOW);
   digitalWrite(pin12,HIGH);
-  digitalWrite(pin11,LOW);
-  digitalWrite(pin10,HIGH);
+  digitalWrite(pin11,HIGH);
+  digitalWrite(pin10,LOW);
   delay(2000);
 }
 
 void loop(){
+  float value;
+  float vol;
+  value = analogRead(0);
+  vol = value * 5 / 1024;
+  Serial.println(vol);
+  delay(100);
+
+  if 
   go();
   back();
 }
+
